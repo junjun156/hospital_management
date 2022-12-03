@@ -32,6 +32,12 @@ class HospitalPatient(models.Model):
     pat_address = fields.Char(string='Address')
     pat_address_state = fields.Char(string='State')
     pat_country = fields.Char(string='Country')
+    ward_type = fields.Selection(
+        [('deluxe_suite', 'Deluxe Suite'), ('single_bedded', 'Single Bedded'), ('two_bedded', 'Two Bedded'),
+         ('four_bedded', 'Four Bedded'), ('high_dependency', 'High Dependency Unit'),
+         ('intensive_care', 'Intensive Care Unit'),
+         ('isolation_icu', 'Isolation ICU'), ('adult', 'Adult'), ('paediatric', 'Paediatric'),
+         ('day_care', 'Day Care Ward'), ('nursery', 'Nursery'), ('incubator', 'Incubator')], string='Ward Type')
     pat_bloodType = fields.Selection([('o1', 'O'), ('o2', 'O+'), ('o3', 'O-'),
                                       ('a1', 'A'), ('a2', 'A+'), ('a3', 'A-'),
                                       ('b1', 'B'), ('b2', 'B+'), ('b3', 'B-'),
