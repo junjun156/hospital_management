@@ -71,6 +71,7 @@
                         </group>
                         <group>
                             <field name="pat_country"/>
+                            <field name="ward_type"/>
                         </group>
                     </group>
 
